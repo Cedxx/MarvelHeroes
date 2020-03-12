@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -41,6 +44,8 @@ public class ListViewAdapter extends ArrayAdapter<NYT> {
         //getting text views
         TextView textViewName = listViewItem.findViewById(R.id.textViewName);
         TextView textViewImageUrl = listViewItem.findViewById(R.id.textViewImageUrl);
+        ImageView toto = listViewItem.findViewById(R.id.ImageView);
+
 
         //Getting the hero for the specified position
         NYT NYT = mNYTList.get(position);
@@ -48,6 +53,8 @@ public class ListViewAdapter extends ArrayAdapter<NYT> {
         //setting hero values to textviews
         textViewName.setText(NYT.getTitle());
         textViewImageUrl.setText(NYT.getUrl());
+        String imgUrl = NYT.getImage();
+        Picasso.get().load(imgUrl).into(toto);
 
         //returning the listitem
         return listViewItem;

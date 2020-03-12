@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadNewsList() {
         //getting the progressbar
-        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        final ProgressBar progressBar = findViewById(R.id.progressBar);
 
         //making the progressbar visible
         progressBar.setVisibility(View.VISIBLE);
@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
                                 //getting the json object of the particular index inside the array
                                 JSONObject heroObject = newsArray.getJSONObject(i);
                                 JSONArray mediaArray = heroObject.getJSONArray("media");
-                                JSONObject mediaObjet = mediaArray.getJSONObject(0);
-                                JSONArray mediaData = mediaObjet.getJSONArray("media-metadata");
+                                JSONObject mediaObject = mediaArray.getJSONObject(0);
+                                JSONArray mediaData = mediaObject.getJSONArray("media-metadata");
                                 JSONObject toto = mediaData.getJSONObject(1);
 
 
